@@ -100,26 +100,8 @@ void Snake::di_chuyen(int x, int y)
 
 bool Snake::kiemtra_ran_cham_tuong()
 {
-	// ran cham tuong tren
-	if (toa_do_y[0] == 1)
-	{
+	if(toa_do_x[0] == 10 || toa_do_x[0] == 100 || toa_do_y[0] == 1 || toa_do_y[0] == 26)
 		return false;
-	}
-	// ran cham tuong duoi
-	else if (toa_do_y[0] == 26)
-	{
-		return false;
-	}
-	//ran cham tuong phai
-	else if (toa_do_x[0] == 100)
-	{
-		return false;
-	}
-	// ran cham tuong trai
-	else if(toa_do_x[0] == 10)
-	{
-		return false;
-	}
 	return true;
 }
 
