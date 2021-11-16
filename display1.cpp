@@ -45,7 +45,7 @@ void menu()
 			char c = _getch();
 			if (c == -32)
 			{
-				kt = true;// d„ b?m
+				kt = true;// d√£ b?m
 				c = _getch();
 				if (c == 72)
 				{
