@@ -125,6 +125,14 @@ public:
 	
 };
 
+Snake::Snake()
+{
+	toa_do_x = vector<int>();
+	toa_do_y = vector<int>();
+	so_luong = 5;
+	derection = 4;
+}
+
 void Snake::tao_ran()
 {
 	int x_khoi_tao = 50;
@@ -307,11 +315,15 @@ void Snake::xu_ly_an_qua()
 		cout << "Diem:" << d;
 	}
 }
-void score(int a[],int d){
+
+void score(int a[],int d)
+{
 	
 	int t=1,i=0;
-	while(t==1){
-		if(a[i]==0&&i<100){
+	while(t==1)
+	{
+		if(a[i]==0&&i<100)
+		{
 			a[i]=d;
 			t=0;
 		}
@@ -319,46 +331,56 @@ void score(int a[],int d){
 	}
 	
 }
-void sort(int a[]){
+
+void sort(int a[])
+{
 	int tg;
-    for(int i = 0; i < 100 - 1; i++){
-        for(int j = i + 1; j < 100; j++){
-            if(a[i] < a[j]){
+    for(int i = 0; i < 100 - 1; i++)
+    {
+        for(int j = i + 1; j < 100; j++)
+	{
+            if(a[i] < a[j])
+	    {
                 tg = a[i];
                 a[i] = a[j];
                 a[j] = tg;        
             }
         }
     }
-    for(int i = 0;i<100;i++){
-		if(a[i]!=0){
+	
+    for(int i = 0;i<100;i++)
+    {
+		if(a[i]!=0)
+		{
 			cout << "Top "<<i+1<<": "<< a[i]<<endl;
-				}
-			}
+		}
+    }
 }
 
 void run2(){
 	int flat = 1;
-	while(flat == 1){
+	while(flat == 1)
+	{
 		menu(thaotac,4);
 		system("cls");
 		gotoXY(1,1);
 		cout << "Diem:" << d;
-		switch(s){
+		switch(s)
+		{
 			case 0:
 				{
-	               ve_tuong();
-	               Snake snake;
-	               snake.tao_ran();
-	               snake.run();
-	                _getch();
+	               		ve_tuong();
+	               		Snake snake;
+	               		snake.tao_ran();
+	               		snake.run();
+	                	_getch();
 				    break;
 				}
 			case 1:
 				{
-					system("cls");
-					sort(a);
-					getch();
+				system("cls");
+				sort(a);
+				getch();
 				    break;
 				}
 			case 2:
@@ -370,7 +392,7 @@ void run2(){
 				cout << "1- Hard"<<endl;
 				cout << "2- Medium"<<endl;
 				cout << "3- Normal"<<endl;
-                cin >> chon;
+                		cin >> chon;
 				if(chon==1)
 							speed = 50;
 							
@@ -380,23 +402,18 @@ void run2(){
 				if(chon==3)
 							speed = 500;
 				clrscr();
-				break;
+					break;
 			}
-			case 3:{
+			case 3:
+			{
 				flat=0;
-				break;
+					break;
 			}
-        }
+        	}
 	}
 	
 }
-Snake::Snake()
-{
-	toa_do_x = vector<int>();
-	toa_do_y = vector<int>();
-	so_luong = 5;
-	derection = 4;
-}
+
 void ve_tuong()
 {
 	SetColor(2);
